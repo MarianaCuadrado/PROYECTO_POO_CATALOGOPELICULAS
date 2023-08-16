@@ -20,15 +20,21 @@ class CatalogoPelicula:
     def __init__(self, nombre):
         self.nombre = nombre
         self.ruta_archivo = f'{self.nombre}.txt'
+        self.peliculas = []
 
-    def agregar_pelicula(self, pelicula): #recibe un objeto pelicula
+    def agregar_pelicula(self, pelicula): 
         with open(self.ruta_archivo, 'a') as archivo:
             archivo.write(f'{pelicula.nombre}\n')
+            self.peliculas.append(pelicula)
+            print("¡Película agregada al catálogo!")
 
     def listar_peliculas(self):
         with open(self.ruta_archivo, 'r') as archivo:
-            archivo.read()
-
+            print (f"Listado de películas del catálogo '{self.nombre}': ")
+            print(archivo.read())
+            
+    
+                
     def eliminar_catalogo(self):
         os.remove(self.ruta_archivo)
-        print(f'Catálogo: {self.ruta_archivo} eliminado')
+        print(f'Catálogo: "{self.ruta_archivo}" eliminado')
