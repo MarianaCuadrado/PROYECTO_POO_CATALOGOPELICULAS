@@ -23,7 +23,14 @@ while opcion != 4:
     elif opcion == 2:
         catalogo.listar_peliculas()
 
-    
+    elif opcion == 3:
+        catalogo.eliminar_catalogo()
+
+    elif opcion == 4:
+        print("Programa finalizado")
+
+    else:
+        print("Por favor, ingrese una opción válida")
         
 
 
